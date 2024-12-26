@@ -17,7 +17,7 @@ Here are some screenshots showing the appearance of the editor in different mode
 
 - **Dark Theme**:
 
-    ![Dark Theme](images/screenshot_dark.png)
+    ![Dark Theme](images/dark.png)
 
 ## Installation
 
