@@ -1,6 +1,6 @@
 # Advanced Notepad
 
-Advanced Notepad is a feature-rich, interactive web-based text editor that allows users to create, edit, and save notes with enhanced formatting options. This simple yet powerful notepad includes features like text color change, highlighting, bold formatting, and theme switching.
+Advanced Notepad is a feature-rich, interactive web-based text editor that allows users to create, edit, and save notes with enhanced formatting options. This simple yet powerful notepad includes feature theme switching and local save.
 
 ## Features
 - **Theme Toggle**: Switch between light and dark themes.
