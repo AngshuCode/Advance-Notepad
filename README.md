@@ -13,11 +13,11 @@ Here are some screenshots showing the appearance of the editor in different mode
 
 - **Light Theme**:
 
-    ![Light Theme](images/screenshot_Screenshot (37).png)
+    ![Light Theme](![Light Theme](images/Screenshot%20(37).png))
 
 - **Dark Theme**:
 
-    ![Dark Theme](images/screenshot_Screenshot (38).png)
+    ![Dark Theme](![Dark Theme](images/Screenshot%20(38).png))
 
 ## Installation
 
