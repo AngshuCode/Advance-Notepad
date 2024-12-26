@@ -26,4 +26,4 @@ To run this project locally, you can follow these steps:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/advanced-notepad.git
+   git clone https://github.com/AngshuCode/advanced-notepad.git
