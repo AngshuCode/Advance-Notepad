@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Notepad</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: #f5f5f5;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 24px;
+        }
+
+        .header button {
+            background: none;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+
+        .header button:hover {
+            background-color: white;
+            color: #4CAF50;
+        }
+
+        .header button:focus {
+            outline: none;
+        }
+
+        .editor {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            font-size: 18px;
+            line-height: 1.6;
+            width: 100%;
+            min-height: 50vh;
+            outline: none;
+            resize: both;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .editor:focus {
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Dark Mode Styling */
+        body.dark {
+            background-color: #333;
+            color: #eee;
+        }
+
+        body.dark .editor {
+            background-color: #444;
+            color: #eee;
+        }
+
+        body.dark .header {
+            background-color: #222;
+        }
+
+        body.dark .header button {
+            border-color: #eee;
+        }
+
+        /* Media Query for responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .editor {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Advanced Notepad</h1>
+        <div>
+            <button id="saveBtn">Save</button>
+            <button id="themeToggle">Toggle Theme</button>
+        </div>
+    </div>
+    <textarea class="editor" id="editor" placeholder="Start typing..."></textarea>
+
+    <script>
+        const saveBtn = document.getElementById('saveBtn');
+        const themeToggle = document.getElementById('themeToggle');
+        const editor = document.getElementById('editor');
+
+        // Check if there is a saved note in localStorage
+        window.onload = () => {
+            const savedText = localStorage.getItem('note');
+            if (savedText) {
+                editor.value = savedText;
+            }
+        };
+
+        // Save content locally in localStorage
+        editor.addEventListener('input', () => {
+            localStorage.setItem('note', editor.value);
+        });
+
+        // Save as .txt file
+        saveBtn.addEventListener('click', () => {
+            const blob = new Blob([editor.value], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'note.txt';
+            link.click();
+        });
+
+        // Toggle Theme
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+        });
+    </script>
+</body>
+</html>
+
+
